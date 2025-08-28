@@ -6,9 +6,8 @@ import faiss
 from sentence_transformers  import SentenceTransformer
 
 df = pd.read_csv('books_with_embeddings.csv')
-
 text_emb = np.load("book_embeddings.npy")
-
+model = SentenceTransformer("Qwen/Qwen3-Embedding-0.6B")
 faiss.normalize_L2(text_emb)
 d = text_emb.shape[1]
 index = faiss.IndexFlatIP(d)

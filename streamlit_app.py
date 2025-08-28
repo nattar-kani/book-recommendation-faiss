@@ -8,7 +8,7 @@ topk = st.slider("Number of recommendations", 1, 10, 3)
  
 if st.button("Search"):
     response = requests.post(
-        "",
+        "http://127.0.0.1:8000/query",
         json={
             "text": query,
             "topk": topk

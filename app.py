@@ -5,12 +5,9 @@ import numpy as np
 import faiss
 from sentence_transformers  import SentenceTransformer
 
-df = pd.read_csv('books.csv')
-df['embedding_text'] = df['title'].astype(str) + " by " + df['authors'].astype(str) 
-texts = df['embedding_text'].tolist()
+df = pd.read_csv('books_with_embeddings.csv')
 
-model = SentenceTransformer("Qwen/Qwen3-Embedding-0.6B")
-text_emb = model.encode(texts).astype("float32")
+text_emb = np.load("book_embeddings.npy")
 
 faiss.normalize_L2(text_emb)
 d = text_emb.shape[1]

@@ -15,4 +15,3 @@ This project is a **book recommendation engine** that uses **FAISS** for similar
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Streamlit](https://streamlit.io/)
 
-## 📂 Project Structure
